@@ -1,0 +1,93 @@
+<div class="form-container">
+  <form class="form-1" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="form-label">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="form-label">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="form-label">Telephone</label>
+        <input type="text" id="telephoneNumber" name="telephoneNumber" formControlName="telephoneNumber"
+          class="form-control" [ngClass]="{ 'is-invalid': submitted && f.telephoneNumber.errors }" required
+          maxlength="11">
+        <div *ngIf="submitted && f.telephoneNumber.errors" class="invalid-feedback">
+          <div *ngIf="f.telephoneNumber.errors.required">Telephone number is required</div>
+          <div *ngIf="f.telephoneNumber.errors.invalidPhoneNumber">Telephone number is not valid</div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="form-label">Email</label>
+        <input type="text" id="email" formControlName="email" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="form-label">Username</label>
+        <input type="text" id="username" formControlName="username" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+          <div *ngIf="f.username.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label class="form-label">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <!-- <div class="form-group col-md-6">
+              <label class="form-label">Confirm Password:</label>
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+              <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+              </div>
+            </div> -->
+      <div class="form-group col-md-6">
+      </div>
+      <div class="submit-container">
+        <div class="spinner-container">
+          <span *ngIf="loading" class="spinner"></span>
+          <div *ngIf="error" class="red-x-container">
+            <div class="red-x"></div>
+          </div>
+          <div *ngIf="success && !loading" class="green-check-container">
+            <div class="green-check"></div>
+          </div>
+        </div>
+        <input type="submit" class="submit-btn" value="Submit">
+      </div>
+    </div>
+  </form>
+  <div *ngIf="error && showAlert" class="alert alert-danger bottom-alert" [@fadeInOut]>
+    Failed to sign up. Please check that the datas you provided are correct!
+  </div>
+  <div *ngIf="success && showAlert" class="alert alert-success bottom-alert" [@fadeInOut]>
+    Signed up successfully!
+  </div>
+</div>

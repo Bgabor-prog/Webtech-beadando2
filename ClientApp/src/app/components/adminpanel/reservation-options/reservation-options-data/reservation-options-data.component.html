@@ -1,0 +1,66 @@
+<div id="reservation_data_container" name="container">
+    <div id="reservation_datablock1" class="div">
+
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Desk</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToDesk" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToDesk" id="assigned-To-Desk">
+
+    </div>
+
+    <div id="reservation_datablock2" class="div" style="padding-left: 3%;">
+
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to User</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToUser" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToUser" id="assigned-To-User">
+
+
+        <div class="button">
+            <button type="button" [disabled]="!assignedToDesk" (click)="addReservation(assignedToDesk,assignedToUser)">
+                Add Reservation
+            </button>
+        </div>
+    </div>
+
+    <div id="reservation_datablock3" class="deletediv" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="seat-id" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="ReservationId" id="seatid">
+        <div class="button">
+            <button type="button" (click)="deleteReservation(ReservationId)">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div id="reservation_datablock4" class="div" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Desk</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToDesk" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToDesk" id="assigned-To-Desk">
+
+    </div>
+
+    <div id="reservation_datablock5" class="div" style="display: none;padding-left: 3%;">
+
+
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Seat</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToUser" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToUser" id="assigned-To-User">
+
+
+        <div class="button">
+            <button type="button" (click)="UpdateReservation()">
+                Update Reservation
+            </button>
+        </div>
+    </div>
+</div>

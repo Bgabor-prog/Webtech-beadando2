@@ -1,0 +1,61 @@
+<div id="desk_data_container" name="container">
+    <div id="desk_datablock1" class="div">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Max Capacity</span>
+        </div>
+        <input type="text" class="form-control" aria-label="maxcap" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="maxCapacity" id="max-cap">
+
+    </div>
+
+    <div id="desk_datablock2" class="div" style="padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Seat Number</span>
+        </div>
+        <input type="text" class="form-control" aria-label="seatnum" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="seatNumber" id="seat-num">
+
+        <div class="button">
+            <button type="button" [disabled]="!maxCapacity" (click)="addSeat(maxCapacity,seatNumber)">
+                Add Desk
+            </button>
+        </div>
+    </div>
+
+
+    <div id="desk_datablock3" class="deletediv" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="desk-id" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="deskId" id="deskid">
+        <div class="button">
+            <button type="button" (click)="deleteSeat(deskId)">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div id="desk_datablock4" class="div" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Max Capacity</span>
+        </div>
+        <input type="text" class="form-control" aria-label="maxcap" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="maxCapacity" id="maxcap">
+    </div>
+
+    <div id="desk_datablock5" class="div" style="display: none;padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Seat Number</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToSeat" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="seatNumber" id="assigned-To-Seat">
+
+        <div class="button">
+            <button type="button" [disabled]="!seatNumber" (click)="UpdateSeat(maxCapacity,seatNumber)">
+                Update Seat
+            </button>
+        </div>
+    </div>
+
+</div>

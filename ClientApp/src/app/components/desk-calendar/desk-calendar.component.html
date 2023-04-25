@@ -1,0 +1,18 @@
+<div class="desk-calendar">
+    <div class="desk-names">
+        <div *ngFor="let desk of desks" class="desk-name">{{desk}}</div>
+    </div>
+    <div class="calendar-content">
+        <mwl-calendar-week-view *ngIf="view === 'week'" [viewDate]="viewDate" [events]="events"></mwl-calendar-week-view>
+        <mwl-calendar-month-view *ngIf="view === 'month'" [viewDate]="viewDate" [events]="events"></mwl-calendar-month-view>
+    </div>
+    <div class="view-buttons">
+        <button (click)="setView('week')">Week</button>
+        <button (click)="setView('month')">Month</button>
+        <ng-container *ngIf="view === 'month'">
+            <button (click)="previousMonth()">Previous Month</button>
+            <button (click)="nextMonth()">Next Month</button>
+            <span class="current-month">{{ currentMonth }}</span>
+          </ng-container>
+    </div>
+</div>

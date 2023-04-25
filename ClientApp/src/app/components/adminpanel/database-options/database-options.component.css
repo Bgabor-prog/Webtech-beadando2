@@ -1,0 +1,21 @@
+.options {
+    width: 120%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.button {
+    display: block;
+    margin-top: 5%;
+    float: right;
+    white-space: normal;
+}
+
+.active
+{
+    background-color:rgb(218, 218, 218);
+    border:none;
+    color:black;
+}
+
+

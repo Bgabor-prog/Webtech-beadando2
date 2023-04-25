@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="https://docs.dhtmlx.com/gantt/codebase/dhtmlxgantt.css">
+<script src="https://docs.dhtmlx.com/gantt/codebase/dhtmlxgantt.js?v=6.1.7"></script>
+<link rel="stylesheet" type="text/css" href="desk-reservation-chart.component.css">
+
+
+
+
+<div class="navigation">
+    <div class="button-container">
+
+        <button (click)="setDayView()" class="view-button">Day View</button>
+        <button (click)="setWeekView()" class="view-button">Week View</button>
+        <button (click)="setMonthView()" class="view-button">Month View</button>
+
+        <button *ngIf="currentView === 'day'" (click)="previousDay()" class="prev-button">&lt; Previous Day</button>
+        <button *ngIf="currentView === 'day'" (click)="nextDay()" class="next-button">Next Day &gt;</button>
+
+        <button *ngIf="currentView === 'week'" (click)="previousWeek()" class="prev-button">&lt; Previous Week</button>
+        <button *ngIf="currentView === 'week'" (click)="nextWeek()" class="next-button">Next Week &gt;</button>
+
+        <button *ngIf="currentView === 'month'" (click)="previousMonth()" class="prev-button">&lt; Previous
+            Month</button>
+        <button *ngIf="currentView === 'month'" (click)="nextMonth()" class="next-button">Next Month &gt;</button>
+    </div>
+</div>
+
+
+<div *ngIf="loading" class="gantt-spinner-container">
+    <div class="gantt-spinner"></div>
+</div>
+<div id="gantt_here" style="width:100%; height:100%;"></div>

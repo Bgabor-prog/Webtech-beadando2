@@ -1,0 +1,27 @@
+.div {
+    width: 100%;
+}
+
+.deletediv
+{
+    width: 100%;
+}
+
+#reservation_data_container {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: block;
+    float: right;
+    white-space: normal;
+    margin-top: 2%;
+}
+
+span {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    white-space: normal;
+}

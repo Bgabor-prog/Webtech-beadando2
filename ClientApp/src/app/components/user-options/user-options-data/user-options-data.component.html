@@ -1,0 +1,110 @@
+<div id="user_data_container" name="container">
+
+    <div id="user_datablock1" class="div">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+        </div>
+        <input type="text" class="form-control" aria-label="username" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="username" id="user-name">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Firstname</span>
+        </div>
+        <input type="text" class="form-control" aria-label="firstname" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="firstName" id="first-name">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Telephone Number</span>
+        </div>
+        <input type="text" class="form-control" aria-label="telephoneNumber" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="telephoneNumber" id="telephone-Number">
+
+    </div>
+
+    <div id="user_datablock2" class="div" style="padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+        </div>
+        <input type="text" class="form-control" aria-label="password" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="password" id="pass-word">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Surname</span>
+        </div>
+        <input type="text" class="form-control" aria-label="surname" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="lastName" id="sur-name">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+        </div>
+        <input type="text" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="email" id="e-mail">
+
+        <div class="button">
+            <button type="button" [disabled]="!firstName"
+                (click)="addUsers(firstName,lastName,telephoneNumber,email,username,password)">
+                Add User
+            </button>
+        </div>
+    </div>
+
+    <div id="user_datablock3" class="deletediv" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="seat-id" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="userId" id="seatid">
+        <div class="button">
+            <button type="button" (click)="deleteUser(userId)">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div id="user_datablock4" class="div" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+        </div>
+        <input type="text" class="form-control" aria-label="username" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="username" id="user-name">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Firstname</span>
+        </div>
+        <input type="text" class="form-control" aria-label="firstname" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="firstName" id="first-name">
+
+        <div class="input-group-prepend" style="padding-top:5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Telephone Number</span>
+        </div>
+        <input type="text" class="form-control" aria-label="telephoneNumber" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="telephoneNumber" id="telephone-Number">
+    </div>
+
+    <div id="user_datablock5" class="div" style="display: none;padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
+        </div>
+        <input type="text" class="form-control" aria-label="password" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="password" id="pass-word">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Surname</span>
+        </div>
+        <input type="text" class="form-control" aria-label="surname" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="lastName" id="sur-name">
+
+        <div class="input-group-prepend" style="padding-top: 5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+        </div>
+        <input type="text" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="email" id="e-mail">
+
+        <div class="button">
+            <button type="button" [disabled]="!lastName"
+                (click)="UpdateUser(firstName,lastName,telephoneNumber,email,username,password)">
+                Update Seat
+            </button>
+        </div>
+    </div>
+</div>

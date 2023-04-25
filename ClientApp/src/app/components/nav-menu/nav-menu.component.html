@@ -1,0 +1,47 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-content">
+      <h1 class="title">SeatManagement</h1>
+    </div>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="nav-links-container">
+        <div class="nav-links-left navbar-nav">
+          <ng-container *ngIf="user">
+            <div class="profile-container">
+              <button class="nav-link profile-button" (click)="toggleProfile()">Profile</button>
+              <div class="container">
+                <div [ngClass]="{'show': state === 'show', 'hide': state === 'hide'}" class="profile">
+                  <div class="profile-content">
+                    <p>Welcome</p>
+                    <p style="text-decoration: underline;text-decoration-color: white;text-decoration-thickness: 2px;">
+                      {{getUser.username}}</p>
+                    <a [routerLink]="'myreservations'">My Reservations</a>
+                    <button (click)="logout()">Logout</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <li class="nav-item" *ngIf="!user">
+            <a class="nav-link login" [routerLink]="'login-signup-container'" routerLink="/login"
+              routerLinkActive="active" >Login</a>
+          </li>
+          <span class="spacer" *ngIf="!user"></span>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/'">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isUser() || isAdmin()" [routerLink]="'reserve'">Reserve</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin()">
+            <a class="nav-link" [routerLink]="'adminpanel'">Admin Panel</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

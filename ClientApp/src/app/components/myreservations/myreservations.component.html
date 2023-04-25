@@ -1,0 +1,55 @@
+<div class="reservation-table-container">
+  <h2>Active Reservations</h2>
+  <table class="reservation-table">
+    <thead>
+      <tr>
+        <th>Reservation ID</th>
+        <th>Desk ID</th>
+        <th>User ID</th>
+        <th>Date From</th>
+        <th>Date To</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of activeReservations">
+        <td>{{ reservation.id }}</td>
+        <td>{{ reservation.deskId }}</td>
+        <td>{{ reservation.userId }}</td>
+        <td>{{ reservation.dateFrom | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ reservation.dateTo | date: 'yyyy-MM-dd' }}</td>
+        <td><button (click)="deleteReservation(reservation.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="my-reservations">
+    <button (click)="toggleExpiredReservations()" class="show-hide-button">
+      {{ showExpiredReservations ? 'Hide' : 'Show' }} Expired Reservations
+    </button>
+    <div *ngIf="showExpiredReservations">
+      <h2>Expired Reservations</h2>
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            <th>Reservation ID</th>
+            <th>Desk ID</th>
+            <th>User ID</th>
+            <th>Date From</th>
+            <th>Date To</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of expiredReservations">
+            <td>{{ reservation.id }}</td>
+            <td>{{ reservation.deskId }}</td>
+            <td>{{ reservation.userId }}</td>
+            <td>{{ reservation.dateFrom | date: 'yyyy-MM-dd' }}</td>
+            <td>{{ reservation.dateTo | date: 'yyyy-MM-dd' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

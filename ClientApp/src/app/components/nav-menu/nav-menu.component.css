@@ -1,0 +1,280 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  background-color: #242424; /* Light grey background for the body */
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #242424; /* Dark grey background for the header */
+  min-height: 80px;
+}
+
+.title {
+  font-family: Garamond, serif;
+  font-size: 35px;
+  margin-right: 3rem;
+  margin-left: 2rem;
+  color: #ffffff;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #242424;
+  min-height: 70px;
+  margin-top:1%;
+
+}
+
+.navbar{
+  background-color: #242424 !important;
+}
+
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-family: 'Roboto', sans-serif;
+  flex-grow: 1;
+  align-self: center;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 1%;
+}
+
+.nav-links-left {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links-left a {
+  margin-right: 1.65rem;
+}
+
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links-right .container {
+  margin-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.navbar-toggler {
+  border-color: #ffffff;
+}
+
+.custom-toggler {
+  margin-left: auto;
+  border-color: #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.container {
+  position: absolute; /* Make the container not affect the layout of other elements */
+  top: calc(100% + 1rem);  /* Position the container below the nav links */
+  left: 0; /* Align the container to the left */
+  z-index: 1;
+}
+
+.profile-container{
+  position: relative;
+}
+
+.profile {
+  position: absolute;
+  top: 100%;
+  right: -43%;
+  width: 200px;
+  background-color: #242424;
+  display: none;
+  flex-direction: column;
+  transition: max-height 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.profile.show {
+  display: flex;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-content p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.profile-content a {
+  margin: 0;
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+  font-size: 16px;
+}
+
+.profile-content a:hover {
+  color: #bdbdbd;
+}
+
+.profile-content button {
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: 2px white solid;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.profile-content a
+{
+  padding: 5px 0; /* Add padding to top and bottom of the elements */
+  line-height: 1.5; /* Adjust line-height for more spacing */
+}
+
+.profile-content button:hover {
+  background-color: #3a3a3a;
+}
+
+.profile-button {
+  position: relative; /* Add relative position to the profile button */
+  z-index: 2; /* Add z-index to make it appear above the profile content */
+  margin-right: 1.65rem;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.nav-link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-top: -1.8%;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: #ffffff !important; /* Change the color to your preferred color */
+}
+
+.login{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-top: -1.8%;
+  margin-right: 15px !important;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  color: #ffffff; 
+}
+
+.spacer {
+  width: 1rem; /* Adjust this value to control the spacing */
+  display: inline-block;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 2px solid #ffffff;
+  border-left: 0;
+  border-top: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.nav-link::before {
+  top: 0;
+  right: 0;
+  transform: rotate(-90deg);
+}
+
+.nav-link::after {
+  bottom: 0;
+  left: 0;
+  transform: rotate(90deg);
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Adjust margin-top for smaller screens */
+@media (max-width: 768px) {
+  .nav-link {
+    margin-top: -2%;
+  }
+}
+
+/* Adjust margin-top for larger screens */
+@media (min-width: 1200px) {
+  .nav-link {
+    margin-top: -1%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .nav-links-container {
+    justify-content: center;
+  }
+}
+

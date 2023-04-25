@@ -1,0 +1,85 @@
+.reservation-table-container {
+    width: 96%; /* Adjust the width as desired */
+    margin: 0 auto; /* Center the container */
+    margin-top: 2%;
+  }
+  
+h2{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300 !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.reservation-table thead tr {
+    background-color: #333;
+    color: #ffffff;
+    text-align: left;
+}
+
+.reservation-table th,
+.reservation-table td {
+    padding: 12px 15px;
+}
+
+.reservation-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .reservation-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .reservation-table tbody tr:last-of-type {
+    border-bottom: 2px solid #333;
+  }
+  
+  .reservation-table tbody tr:hover {
+    background-color: #f6f6f6;
+  }
+
+  .reservation-table button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .reservation-table button:hover {
+    background-color: #ffffff;
+    border: 2px black solid;
+    color:#242424;
+  }
+
+  .my-reservations .show-hide-button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    border: 2px solid transparent;
+    margin-bottom: 2%;
+  }
+  
+  .my-reservations .show-hide-button:hover {
+    background-color: #ffffff;
+    border: 2px black solid;
+    color:#242424;
+  }

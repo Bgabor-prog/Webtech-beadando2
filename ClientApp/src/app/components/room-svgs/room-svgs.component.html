@@ -1,0 +1,6 @@
+<div class="spinner" style="display: none;"></div>
+<div class="desk-reservations">
+    <div *ngFor="let reservation of reservations" class="reservation" [style.left]="getLeftOffset(reservation)" [style.width]="getWidth(reservation)">
+      {{reservation.startDate | date:'shortDate'}} - {{reservation.endDate | date:'shortDate'}}
+    </div>
+  </div>

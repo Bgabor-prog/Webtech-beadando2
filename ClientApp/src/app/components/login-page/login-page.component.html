@@ -1,0 +1,41 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="position-relative mb-3">
+            <label for="username" class="form-label" style="margin-right: 5%;">Username</label>
+            <input type="text" id="username" formControlName="username" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="position-relative mb-3">
+            <label for="password" class="form-label" style="margin-right: 5%;">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+        <div class="forgot-password-container">
+            <a href="#" class="forgot-password-link" routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+        <div class="submit-container">
+            <div class="spinner-container">
+                <span *ngIf="loading" class="spinner"></span>
+                <div *ngIf="error" class="red-x-container">
+                    <div class="red-x"></div>
+                </div>
+                <div *ngIf="success && !loading" class="green-check-container">
+                    <div class="green-check"></div>
+                </div>
+            </div>
+            <input type="submit" value="Submit">           
+        </div>
+    </form>
+    <div *ngIf="error && showAlert" class="alert alert-danger bottom-alert" [@fadeInOut]>
+        Failed to login. Please check your username and password.
+    </div>
+    <div *ngIf="success && showAlert" class="alert alert-success bottom-alert" [@fadeInOut]>
+        Successfully logged in!
+    </div>
+</div>

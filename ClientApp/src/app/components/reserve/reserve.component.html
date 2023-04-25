@@ -1,0 +1,67 @@
+<html>
+
+<body>
+    <div class="wrapper">
+
+        <div class="svg-container">
+            <room-svgs class="custom-svg" (deskClick)="onDeskClick($event)"></room-svgs>
+        </div>
+
+        <div class="other-content" [@slideInOut]="toggleCalendar">
+            <h1 class="behind-text">Choose your Desk</h1>
+            <div class="assign-div box">
+
+                <div class="row">
+                    <div class="col">
+                        <label class="date-label">Your desk</label>
+                        <input name="selectedDeskId" type="text" class="form-control" aria-label="assignedToDesk"
+                            aria-describedby="inputGroup-sizing-sm" [(ngModel)]="assignedToDesk"
+                            [(ngModel)]="selectedDeskId" id="assigned-To-Desk" disabled>
+                    </div>
+                    <div class="col">
+                        <span class="date-label">Your id</span>
+                        <input type="text" class="form-control" aria-label="assignedToUser"
+                            aria-describedby="inputGroup-sizing-sm" [(ngModel)]="assignedToUser" id="assigned-To-User" disabled>
+
+                    </div>
+                </div>
+
+                <div class="row date-selection">
+                    <div class="col">
+                        <span class="date-label">Start Date</span>
+                        <input matInput [matDatepicker]="picker1" [(ngModel)]="dateFrom" (dateChange)="onDateChange()">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+
+                    </div>
+                    <div class="col">
+                        <span class="date-label">End Date</span>
+                        <input matInput [matDatepicker]="picker2" [(ngModel)]="dateTo" (dateChange)="onDateChange()">
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <button class="open-button" (click)="showCalendar = !showCalendar" (click)="openGanttChart()">Open calendar</button>
+                    </div>
+                    <div class="col">
+                        <button class="reserve-button" type="button" (click)="addReservation(assignedToUser)">
+                            Make Reservation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="error && showAlert" class="alert alert-danger bottom-alert" [@fadeInOut]>
+        There was an error making the reservation!
+    </div>
+    <div *ngIf="success && showAlert" class="alert alert-success bottom-alert" [@fadeInOut]>
+        Reservation successfully made!
+    </div>
+</body>
+
+</html>

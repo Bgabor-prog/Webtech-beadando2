@@ -1,0 +1,76 @@
+<!-- <div id="worker_data_container" name="container">
+    <div id="worker_datablock1" class="div">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="name" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="workerName" id="seat-name">
+
+    </div>
+
+    <div id="worker_datablock2" class="div" style="padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Team</span>
+        </div>
+        <input type="text" class="form-control" aria-label="numberOfMonitors" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToTeam" id="number-Of-Monitors">
+
+        <div class="input-group-prepend" style="padding-top:5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Seat</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToRoom" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToSeat" id="number-Of-Monitors">
+
+
+        <div class="button">
+            <button type="button" [disabled]="!workerName"
+                (click)="addWorker(workerName,assignedToTeam,assignedToSeat)">
+                Add Worker
+            </button>
+        </div>
+    </div>
+
+    <div id="worker_datablock3" class="deletediv" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="seat-id" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="workerId" id="seatid">
+        <div class="button">
+            <button type="button" (click)="deleteSeat(workerId)">
+                Delete
+            </button>
+        </div>
+    </div>
+
+    <div id="worker_datablock4" class="div" style="display: none;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+        </div>
+        <input type="text" class="form-control" aria-label="name" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="workerName" id="seat-name">
+
+    </div>
+
+    <div id="worker_datablock5" class="div" style="display: none;padding-left: 3%;">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Team</span>
+        </div>
+        <input type="text" class="form-control" aria-label="numberOfMonitors" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToTeam" id="number-Of-Monitors" disabled>
+
+        <div class="input-group-prepend" style="padding-top:5%;">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Assigned to Seat</span>
+        </div>
+        <input type="text" class="form-control" aria-label="assignedToRoom" aria-describedby="inputGroup-sizing-sm"
+            [(ngModel)]="assignedToSeat" id="number-Of-Monitors" disabled>
+
+
+        <div class="button">
+            <button type="button" [disabled]="!workerId"
+                (click)="UpdateSeat(workerName)">
+                Update Seat
+            </button>
+        </div>
+    </div>
+</div> -->

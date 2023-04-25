@@ -1,0 +1,48 @@
+.calendar {
+    width: 100%;
+}
+
+.desk-names {
+    display: flex;
+    flex-direction: row;
+    /* Add styles to align and format the desk names */
+  }
+
+.calendar-content {
+   
+    height: 550px;
+    overflow: auto;
+}
+
+.calendar-content::-webkit-scrollbar {
+    width: 0.2em;
+    background-color: #F5F5F5;
+}
+
+.calendar-content::-webkit-scrollbar-thumb {
+    background-color: grey;
+}
+
+.calendar-content::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+.view-buttons button {
+    margin-right: 8px; /* Adjust the space as needed */
+  }
+
+button{
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+button:hover{
+    background-color: #555555;
+}
